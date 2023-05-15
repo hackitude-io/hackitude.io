@@ -1,15 +1,10 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import bg from "/assets/test.jpg";
 ---
 
-<html lang="en" class="antialiased">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="flex flex-col min-h-screen">
-		<h1 class="">Astro</h1>
-	</body>
-</html>
+<Layout title="Hackitude">
+  <main class="grid grid-cols-2 grid-rows-2">
+    <img src={bg} class="row-span-full col-span-full">
+  </main>
+</Layout>
