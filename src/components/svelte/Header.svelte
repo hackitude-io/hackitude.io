@@ -7,14 +7,14 @@
   let isOpen = false;
 </script>
 
-<header class="fixed bottom-0 py-8 grid place-items-center gap-8 w-full">
+<header class="fixed bottom-0 py-8 grid place-items-center gap-8 w-full z-50">
   {#if isOpen}
   {#key key}
     <nav
     in:slide={{ duration, delay: duration }}
     out:slide={{ duration }}
     class="mx-auto backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow">
-      <ul class="flex gap-6">
+      <ul class="flex gap-6 group">
         <li>
           <a href="#" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
             <div class="border border-black rounded-full h-3 w-3"/>
@@ -38,10 +38,10 @@
     {/key}
   {/if}
   <div class="mx-auto flex gap-8">
-    <a href="/" class="bg-brand-green w-fit py-2 px-6 rounded-full font-semibold shadow">hackitude.io</a>
+    <a href="/" class="bg-brand-green w-fit py-2 px-6 rounded-full font-semibold shadow hover:bg-brand-green/70 transition">hackitude.io</a>
     <button
     on:click={() => isOpen = !isOpen}
-    class="backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow">
+    class="backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow hover:bg-white/70 transition">
     <span>Menu</span>
     </button>
 </div>
