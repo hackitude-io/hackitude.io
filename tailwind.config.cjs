@@ -8,6 +8,9 @@ module.exports = {
           colors: {
       'brand-green': '#EAFE01',
       'brand-light': '#F4F4F0',
+      },
+        fontFamily: {
+      newake: ['Newake', 'sans-serif'],
     },
     },
     fontSize: {

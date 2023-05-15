@@ -1,0 +1,8 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Newake';
+  src: url('/fonts/Newake-Font-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
