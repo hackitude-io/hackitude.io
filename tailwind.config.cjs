@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         "newake": ['Newake', 'sans-serif'],
+        "sans": ["Space Grotesk", "sans-serif"]
       },
       typography: {
         DEFAULT: {
