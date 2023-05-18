@@ -1,19 +1,17 @@
 ---
-import paperBG from "../../public/assets/paper_bg.webp";
-import heart from "../../public/assets/heart.png"
+import paperBG from "/assets/paper_bg.webp";
+import heart from "/assets/heart.png"
 ---
 
-<section class="h-screen w-full">
+<section class="h-[92vh] w-full z-10">
   <div class="grid grid-rows-2 grid-cols-2 place-items-center h-full w-full bg-gray-200">
-    <img src={paperBG} aria-hidden="true" class="row-span-full col-span-full object-cover w-full h-full mix-blend-multiply z-10 pointer-events-none	">
-    <h1 class="row-span-full col-span-full font-newake text-9xl text-slate-600 text-center z-20">
+    <img src={paperBG} aria-hidden="true" class="row-span-full col-span-full object-cover w-full h-full pointer-events-none">
+    <div class="row-span-full col-span-full">
+      <h1 class="font-newake text-9xl text-slate-700 text-center z-10">
       <span class="block text-5xl md:text-8xl font-newake uppercase">We love</span>
       <span class="block text-3xl md:text-5xl">development and the web.</span>
     </h1>
-    <img src={heart} aria-hidden="true" class="row-span-full col-span-full object-contain md:w-[1600px] opacity-10 z-10 pointer-events-none	">
+    </div>
+    <img src={heart} aria-hidden="true" class="row-span-full col-span-full object-contain opacity-10 pointer-events-none	">
   </div>
 </section>
-
-<style>
-
-</style>

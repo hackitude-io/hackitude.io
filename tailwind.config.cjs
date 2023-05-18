@@ -5,13 +5,39 @@ module.exports = {
   ],
   theme: {
     extend: {
-          colors: {
-      'brand-green': '#EAFE01',
-      'brand-light': '#F4F4F0',
+      colors: {
+        'brand-green': '#EAFE01',
+        'brand-light': '#F4F4F0',
       },
-        fontFamily: {
-      newake: ['Newake', 'sans-serif'],
-    },
+      fontFamily: {
+        "newake": ['Newake', 'sans-serif'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              'font-weight': 'normal',
+              'font-size': '2.5rem',
+            },
+            h2: {
+              'font-weight': 'normal',
+              'font-size': '2rem',
+            },
+            h3: {
+              'font-weight': 'normal',
+              'font-size': '1.75rem',
+            },
+            h4: {
+              'font-weight': 'normal',
+              'font-size': '1.5rem',
+            },
+            h5: {
+              'font-weight': 'normal',
+              'font-size': '1.25rem',
+            }
+          },
+        },
+      },
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
@@ -29,5 +55,7 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 };
