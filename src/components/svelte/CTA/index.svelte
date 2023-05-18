@@ -1,5 +1,4 @@
 <script>
-  import hand from "/assets/hand.png"
   export let url;
   export let text;
 </script>
