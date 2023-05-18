@@ -1,0 +1,19 @@
+---
+import Articles from "./Articles.astro";
+import CTA from "./svelte/CTA/index.svelte";
+---
+
+<section class="rounded-[50px] bg-white z-20 -translate-y-10 shadow">
+  <div class="py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="mx-auto text-lg font-bold tracking-tight bg-brand-green w-fit p-1">We grew up on the internet</h2>
+      <p class="mt-2 text-3xl font-bold leading-8 sm:text-4xl">Now we work with it, write about it.</p>
+    </div>
+      <Articles />
+      <div class="mt-16">
+        <CTA url="/articles" text="All articles" client:load/>
+      </div>
+  </div>
+</section>
+
