@@ -1,21 +1,27 @@
 ---
-import Articles from "./Articles.astro";
-import CTA from "./svelte/CTA/index.svelte";
+import Articles from './Articles.astro';
+import CTA from './svelte/CTA/index.svelte';
 
-const {heading, paragraph} = Astro.props;
+const { heading, paragraph } = Astro.props;
 ---
 
-<section class="rounded-[50px] bg-white z-20 -translate-y-10 shadow">
+<section class="rounded-[50px] bg-white z-20 shadow">
   <div class="py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="mx-auto text-lg font-bold tracking-tight bg-brand-green w-fit p-1">{heading}</h2>
-      <p class="mt-2 text-3xl font-bold leading-8 sm:text-4xl">{paragraph}</p>
-    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2
+          class="mx-auto text-lg font-bold tracking-tight bg-brand-green w-fit p-1"
+        >
+          {heading}
+        </h2>
+        <p class="mt-2 text-3xl font-bold leading-8 sm:text-4xl">
+          {paragraph}
+        </p>
+      </div>
       <Articles />
       <div class="mt-16">
-        <CTA url="/articles" text="All articles" client:load/>
+        <CTA url="/articles" text="All articles" client:load />
       </div>
+    </div>
   </div>
 </section>
-
