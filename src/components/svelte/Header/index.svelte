@@ -44,15 +44,15 @@
       >
         <ul class="flex gap-6 group">
           <li>
-            <a href="#" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
+            <a href="/articles" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
               <div class="border border-black rounded-full h-3 w-3" />
-              <span>Work</span>
+              <span>Articles</span>
             </a>
           </li>
           <li>
-            <a href="#" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
+            <a href="/resources" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
               <div class="border border-black rounded-full h-3 w-3" />
-              <span>Articles</span>
+              <span>Resources</span>
             </a>
           </li>
           <li>
