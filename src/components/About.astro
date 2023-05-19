@@ -1,0 +1,69 @@
+---
+import Robot from './svelte/Robot/index.svelte';
+import CTA from './svelte/CTA/index.svelte';
+---
+
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+    >
+      <div class="lg:pr-4">
+        <Robot client:load />
+      </div>
+      <div>
+        <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
+          <p
+            class="text-lg font-bold tracking-tight bg-brand-green w-fit p-1"
+          >
+            Our values
+          </p>
+          <h1
+            class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            On a mission to make a more fun, accessible web
+          </h1>
+          <div class="max-w-xl">
+            <p class="mt-6">
+              We at Hackitude are head-over-heels in love with the
+              infinite possibilities of the web. In fact, we're so
+              smitten that we've dedicated our lives to exploring
+              every nook and cranny of web development, UX design, and
+              accessibility.
+            </p>
+            <p class="mt-8">
+              We believe that the world wide web is like the world's
+              biggest playground. It's a place where ideas take shape,
+              creativity blossoms, and the impossible becomes
+              possible. We're the kids who never stopped playing in
+              this sandbox, building digital sandcastles with code,
+              user experience, and inclusive design.
+            </p>
+            <p class="mt-8">
+              As champions of equity, we're committed to making the
+              internet a place for everyone. We understand that a
+              truly fantastic website is not just about flashy designs
+              and complex functionalities—it's about ensuring every
+              individual, regardless of their abilities or
+              disabilities, can navigate, interact, and enjoy the
+              online experience. And we aim to spread this ethos
+              through everything we do at Hackitude.
+            </p>
+            <p class="mt-8">
+              Come join us at Hackitude and let's play, learn, and
+              grow together in this wonderfully weird, wild, and wacky
+              web world!
+            </p>
+          </div>
+        </div>
+        <div class="mt-10">
+          <CTA
+            client:load
+            url="/resources"
+            text="Learn about development"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

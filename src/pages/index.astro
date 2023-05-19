@@ -1,4 +1,5 @@
 ---
+import About from '../components/About.astro';
 import FeaturedArticles from '../components/FeaturedArticles.astro';
 import Hero from '../components/Hero.astro';
 import Layout from '../layouts/Layout.astro';
@@ -7,6 +8,10 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Hackitude">
   <main>
     <Hero />
-    <FeaturedArticles heading="We grew up on the internet" paragraph="Now we work with it, write about it."/>
+    <FeaturedArticles
+      heading="We grew up on the internet"
+      paragraph="Now we work with it, write about it."
+    />
+    <About />
   </main>
 </Layout>
