@@ -1,23 +1,26 @@
 ---
 import { contentfulClient } from '../../lib/contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries({
     content_type: 'article',
   });
+
   const pages = items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
       title: item.fields.title,
-      content: documentToHtmlString(item.fields.content),
+      content: item.fields.content,
       date: new Date(item.fields.date).toLocaleDateString(),
       authorName: item.fields.author.fields.name,
       authorImage: item.fields.author.fields.profileImage,
       featuredImage: item.fields.featuredImage,
     },
   }));
+
   return pages;
 }
 
@@ -29,9 +32,23 @@ const {
   authorImage,
   featuredImage,
 } = Astro.props;
+
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+      if (node.data.target.sys.contentType.sys.id === 'codeBlock') {
+        return ` <pre class=${node.data.target.fields.language}}>
+                 <code>${node.data.target.fields.code}</code>
+               </pre>`;
+      }
+    },
+  },
+};
+
+const htmlContent = documentToHtmlString(content, options);
 ---
 
-<Layout title=`Hackitude | ${title}`>
+<Layout title={`Hackitude | ${title}`}>
   <img src={featuredImage.fields.file.url} alt="" />
   <h1>{title}</h1>
   <time class="mr-8">{date}</time>
@@ -52,5 +69,5 @@ const {
       {authorName}
     </div>
   </div>
-  <article set:html={content} />
+  <article class="prose" set:html={htmlContent} />
 </Layout>
