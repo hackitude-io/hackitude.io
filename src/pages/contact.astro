@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hello from '../components/svelte/Hello/index.svelte';
+---
+
+<Layout title="Hackitude">
+  <main>
+    <section class="bg-white">
+      <div
+        class="mx-auto w-full max-w-5xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8"
+      >
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-4xl font-bold tracking-tight sm:text-6xl">
+            Cotact us
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            Do you want us at Hackitude to write about something? Do
+            you want to write for us? Hit us up!
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 items-center mt-8">
+          <ul class="grid grid-cols-3 text-center md:text-left">
+            <li class="flex flex-col">
+              <h2 class="font-semibold text-lg">Code</h2>
+              <a
+                class="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/hackitude-io">Github</a
+              >
+            </li>
+            <li class="flex flex-col">
+              <h2 class="font-semibold text-lg">Social</h2>
+              <a
+                class="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://youtube.com/@hackitude">YouTube</a
+              >
+              <!-- <a
+                class="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="">Instagram</a
+              > -->
+            </li>
+            <li class="flex flex-col">
+              <h2 class="font-semibold text-lg">Mail</h2>
+              <a
+                class="underline"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="mailto:hi@hackitude.io">hackitude.io</a
+              >
+            </li>
+          </ul>
+          <div class="mt-8 md:m-0"><Hello client:load /></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

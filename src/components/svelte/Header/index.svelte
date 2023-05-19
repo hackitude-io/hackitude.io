@@ -34,7 +34,9 @@
   }
 </script>
 
-<header class="fixed bottom-0 py-8 grid place-items-center gap-8 w-full z-50">
+<header
+  class="fixed bottom-0 py-8 grid place-items-center gap-8 w-full z-50"
+>
   {#if isOpen}
     {#key key}
       <nav
@@ -44,19 +46,28 @@
       >
         <ul class="flex gap-6 group">
           <li>
-            <a href="/articles" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
+            <a
+              href="/articles"
+              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+            >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Articles</span>
             </a>
           </li>
           <li>
-            <a href="/resources" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
+            <a
+              href="/resources"
+              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+            >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Resources</span>
             </a>
           </li>
           <li>
-            <a href="#" class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10">
+            <a
+              href="/contact"
+              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+            >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Contact</span>
             </a>
@@ -66,7 +77,11 @@
     {/key}
   {/if}
   <div class="mx-auto flex items-center gap-8">
-    <a href="/" class="bg-brand-green w-fit py-2 px-6 rounded-full font-semibold shadow hover:bg-brand-green/70 transition">hackitude.io</a>
+    <a
+      href="/"
+      class="bg-brand-green w-fit py-2 px-6 rounded-full font-semibold shadow hover:bg-brand-green/70 transition"
+      >hackitude.io</a
+    >
     <button
       on:click={toggleMenu}
       class="flex items-center backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow hover:bg-white/70 transition"
