@@ -1,0 +1,56 @@
+---
+import { contentfulClient } from '../../lib/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const { items } = await contentfulClient.getEntries({
+    content_type: 'article',
+  });
+  const pages = items.map((item) => ({
+    params: { slug: item.fields.slug },
+    props: {
+      title: item.fields.title,
+      content: documentToHtmlString(item.fields.content),
+      date: new Date(item.fields.date).toLocaleDateString(),
+      authorName: item.fields.author.fields.name,
+      authorImage: item.fields.author.fields.profileImage,
+      featuredImage: item.fields.featuredImage,
+    },
+  }));
+  return pages;
+}
+
+const {
+  content,
+  title,
+  date,
+  authorName,
+  authorImage,
+  featuredImage,
+} = Astro.props;
+---
+
+<Layout title=`Hackitude | ${title}`>
+  <img src={featuredImage.fields.file.url} alt="" />
+  <h1>{title}</h1>
+  <time class="mr-8">{date}</time>
+  <div class="-ml-4 flex items-center gap-x-4">
+    <svg
+      viewBox="0 0 2 2"
+      class="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50"
+    >
+      <circle cx="1" cy="1" r="1"></circle>
+    </svg>
+    <div class="flex gap-x-2.5">
+      <img
+        src={`https:${authorImage.fields.file.url}`}
+        alt={authorName}
+        class="h-6 w-6 flex-none rounded-full bg-white/10"
+        loading="lazy"
+      />
+      {authorName}
+    </div>
+  </div>
+  <article set:html={content} />
+</Layout>
