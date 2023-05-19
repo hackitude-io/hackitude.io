@@ -1,0 +1,25 @@
+---
+import AllArticles from '../components/AllArticles.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hackitude | Articles">
+  <main>
+    <section class="max-w-7xl mx-auto">
+      <div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-4xl font-bold tracking-tight sm:text-6xl">
+            Articles
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            As if writing code at work wasn't enough, we also write
+            about code when we can. Here are some articles about
+            development, ux design, accessibility and the industry.
+            They are short, to the point and often contain tutorials.
+          </p>
+        </div>
+        <AllArticles />
+      </div>
+    </section>
+  </main>
+</Layout>
