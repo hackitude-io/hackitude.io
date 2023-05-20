@@ -39,41 +39,50 @@
 >
   {#if isOpen}
     {#key key}
-      <nav
-        in:slide={{ duration, delay: duration }}
-        out:slide={{ duration }}
+      <div
         class="mx-auto backdrop-blur-lg bg-white/40 w-fit py-1 px-3 md:py-2 md:px-6 rounded-full font-semibold uppercase shadow"
       >
-        <ul class="flex gap-1 md:gap-6 group text-xs md:text-base">
-          <li>
-            <a
-              href="/articles"
-              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
-            >
-              <div class="border border-black rounded-full h-3 w-3" />
-              <span>Articles</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/resources"
-              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
-            >
-              <div class="border border-black rounded-full h-3 w-3" />
-              <span>Resources</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/contact"
-              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
-            >
-              <div class="border border-black rounded-full h-3 w-3" />
-              <span>Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <nav
+          in:slide={{ duration, delay: duration }}
+          out:slide={{ duration }}
+        >
+          <ul class="flex gap-1 md:gap-6 group text-xs md:text-base">
+            <li>
+              <a
+                href="/articles"
+                class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
+              >
+                <div
+                  class="border border-black rounded-full h-3 w-3"
+                />
+                <span>Articles</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/resources"
+                class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
+              >
+                <div
+                  class="border border-black rounded-full h-3 w-3"
+                />
+                <span>Resources</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
+              >
+                <div
+                  class="border border-black rounded-full h-3 w-3"
+                />
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     {/key}
   {/if}
   <div class="mx-auto flex items-center gap-8">
