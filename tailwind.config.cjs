@@ -10,7 +10,7 @@ module.exports = {
         'brand-light': '#F4F4F0',
       },
       fontFamily: {
-        newake: ['Newake', 'sans-serif'],
+        newake: ['Newake', 'Space Grotesk', 'sans-serif'],
         sans: ['Space Grotesk', 'sans-serif'],
       },
       typtypography: (theme) => ({
