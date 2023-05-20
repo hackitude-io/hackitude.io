@@ -3,10 +3,10 @@ import Robot from './svelte/Robot/index.svelte';
 import CTA from './svelte/CTA/index.svelte';
 ---
 
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-24">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div
-      class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+      class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2"
     >
       <div class="lg:pr-4">
         <Robot client:load />
@@ -56,7 +56,7 @@ import CTA from './svelte/CTA/index.svelte';
             </p>
           </div>
         </div>
-        <div class="mt-10">
+        <div class="mt-8 md:mt-16">
           <CTA
             client:load
             url="/resources"
