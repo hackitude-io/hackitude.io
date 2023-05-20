@@ -42,13 +42,13 @@
       <nav
         in:slide={{ duration, delay: duration }}
         out:slide={{ duration }}
-        class="mx-auto backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow"
+        class="mx-auto backdrop-blur-lg bg-white/40 w-fit py-1 px-3 md:py-2 md:px-6 rounded-full font-semibold uppercase shadow"
       >
-        <ul class="flex gap-6 group">
+        <ul class="flex gap-1 md:gap-6 group text-xs md:text-base">
           <li>
             <a
               href="/articles"
-              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
             >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Articles</span>
@@ -57,7 +57,7 @@
           <li>
             <a
               href="/resources"
-              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
             >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Resources</span>
@@ -66,7 +66,7 @@
           <li>
             <a
               href="/contact"
-              class="flex items-center gap-1 px-2 py-1 rounded-full hover:bg-black/10"
+              class="flex items-center gap-1 px-2 py-1 rounded-full md:hover:bg-black/10"
             >
               <div class="border border-black rounded-full h-3 w-3" />
               <span>Contact</span>
@@ -79,12 +79,12 @@
   <div class="mx-auto flex items-center gap-8">
     <a
       href="/"
-      class="bg-brand-green w-fit py-2 px-6 rounded-full font-semibold shadow hover:bg-brand-green/70 transition"
+      class="bg-brand-green w-fit py-2 px-6 rounded-full text-sm md:text-base font-semibold shadow hover:bg-brand-green/70 transition"
       >hackitude.io</a
     >
     <button
       on:click={toggleMenu}
-      class="flex items-center backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow hover:bg-white/70 transition"
+      class="flex items-center text-sm md:text-base backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow md:hover:bg-white/70 transition"
     >
       <div bind:this={animationContainer} class="h-8 w-8" />
       <span>Menu</span>
