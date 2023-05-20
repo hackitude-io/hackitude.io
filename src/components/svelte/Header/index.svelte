@@ -3,6 +3,7 @@
   import { onMount, afterUpdate } from 'svelte';
   import lottie from 'lottie-web';
   import animationData from './menu.json';
+  import Logo from '../SVG/Logo.svelte';
 
   let key;
   let duration;
@@ -118,12 +119,13 @@
   <div class="mx-auto flex items-center gap-8">
     <a
       href="/"
-      class="bg-brand-green w-fit py-2 px-6 rounded-full text-sm md:text-base font-semibold shadow hover:bg-brand-green/70 transition"
-      >hackitude.io</a
+      class="h-12 grid place-items-center bg-brand-green w-fit py-2 px-6 rounded-full text-sm md:text-base font-semibold shadow hover:bg-brand-green/70 transition"
     >
+      <Logo client:load />
+    </a>
     <button
       on:click={toggleMenu}
-      class="flex items-center text-sm md:text-base backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow md:hover:bg-white/70 transition"
+      class="h-12 flex items-center text-sm md:text-base backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow md:hover:bg-white/70 transition"
       aria-expanded={isOpen}
       aria-controls="main-menu"
     >
