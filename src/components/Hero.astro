@@ -1,17 +1,84 @@
 ---
-import paperBG from "/assets/paper_bg.webp";
-import heart from "/assets/heart.png"
+import paperBG from '/assets/paper_bg.webp';
+import heart from '/assets/heart.png';
 ---
 
 <section class="h-[92vh] w-full z-10">
-  <div class="grid grid-rows-2 grid-cols-2 place-items-center h-full w-full bg-gray-200">
-    <img src={paperBG} aria-hidden="true" class="row-span-full col-span-full object-cover w-full h-full pointer-events-none">
+  <div
+    class="grid grid-rows-2 grid-cols-2 place-items-center h-full w-full bg-gray-200"
+  >
+    <img
+      src={paperBG}
+      aria-hidden="true"
+      class="row-span-full col-span-full object-cover w-full h-full pointer-events-none"
+    />
     <div class="row-span-full col-span-full">
-      <h1 class="font-newake text-9xl text-slate-700 text-center z-10">
-      <span class="block text-5xl md:text-8xl font-newake uppercase">We love</span>
-      <span class="block text-3xl md:text-5xl">development and the web.</span>
-    </h1>
+      <div class="relative isolate pt-14">
+        <div
+          class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40"
+        >
+          <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+            <div class="flex">
+              <div
+                class="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+              >
+                <span class="font-semibold"
+                  >Want to write a post?</span
+                >
+                <span
+                  class="h-4 w-px bg-gray-900/10"
+                  aria-hidden="true"></span>
+                <a href="/contact" class="flex items-center gap-x-1">
+                  <span class="absolute inset-0" aria-hidden="true"
+                  ></span>
+                  Contact us
+                  <svg
+                    class="-mr-2 h-5 w-5 text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h1
+              class="mt-10 max-w-lg text-4xl font-bold tracking-tight sm:text-6xl"
+            >
+              Embrace the Web: Craft. Learn. Innovate.
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              Welcome to Hackitude.io, your go-to resource for diving
+              deep into web development, UX, and accessibility. Here,
+              we take joy in creating clean code, designing seamless
+              user experiences, and promoting inclusivity in the
+              digital world. Let's simplify the complex, one line of
+              code at a time!
+            </p>
+            <div class="mt-10 flex items-center gap-x-6">
+              <a
+                href="/articles"
+                class="rounded-md bg-brand-green px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-brand-green/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >Get reading!</a
+              >
+              <a
+                href="/about"
+                class="text-sm font-semibold leading-6 text-gray-900"
+                >Learn more <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <img src={heart} aria-hidden="true" class="row-span-full col-span-full object-contain opacity-10 pointer-events-none	">
+    <img
+      src={heart}
+      aria-hidden="true"
+      class="row-span-full col-span-full object-contain opacity-10 pointer-events-none"
+    />
   </div>
 </section>
