@@ -22,16 +22,45 @@
     });
   });
 
+  let isFirstLoad = true;
+
   afterUpdate(() => {
-    const startFrame = isOpen ? 0 : 26;
-    const endFrame = isOpen ? 27 : 56;
-    animationInstance.playSegments([startFrame, endFrame], true);
-    animationInstance.setSpeed(1.5);
+    if (animationInstance && !isFirstLoad) {
+      const startFrame = isOpen ? 0 : 26;
+      const endFrame = isOpen ? 27 : 56;
+      animationInstance.playSegments([startFrame, endFrame], true);
+      animationInstance.setSpeed(1.5);
+    }
   });
 
   function toggleMenu() {
+    isFirstLoad = false;
     isOpen = !isOpen;
   }
+
+  function closeMenu(event) {
+    if (
+      event.key === 'Escape' ||
+      !event.target.closest('.backdrop-blur-lg')
+    ) {
+      isOpen = false;
+    }
+  }
+
+  onMount(() => {
+    document.addEventListener('keydown', closeMenu);
+    document.addEventListener('click', closeMenu);
+  });
+
+  afterUpdate(() => {
+    if (isOpen) {
+      document.addEventListener('keydown', closeMenu);
+      document.addEventListener('click', closeMenu);
+    } else {
+      document.removeEventListener('keydown', closeMenu);
+      document.removeEventListener('click', closeMenu);
+    }
+  });
 </script>
 
 <header
@@ -45,6 +74,7 @@
         <nav
           in:slide={{ duration, delay: duration }}
           out:slide={{ duration }}
+          aria-label="Main Menu"
         >
           <ul class="flex gap-1 md:gap-6 group text-xs md:text-base">
             <li>
@@ -94,6 +124,8 @@
     <button
       on:click={toggleMenu}
       class="flex items-center text-sm md:text-base backdrop-blur-lg bg-white/40 w-fit py-2 px-6 rounded-full font-semibold uppercase shadow md:hover:bg-white/70 transition"
+      aria-expanded={isOpen}
+      aria-controls="main-menu"
     >
       <div bind:this={animationContainer} class="h-8 w-8" />
       <span>Menu</span>
