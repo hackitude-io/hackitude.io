@@ -5,8 +5,8 @@ import CTA from './svelte/CTA/index.svelte';
 const { heading, paragraph } = Astro.props;
 ---
 
-<section class="rounded-[50px] bg-white z-20 shadow">
-  <div class="py-24 sm:py-32">
+<section>
+  <div class="py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2
@@ -19,7 +19,7 @@ const { heading, paragraph } = Astro.props;
         </p>
       </div>
       <Articles />
-      <div class="mt-16">
+      <div class="mt-8 md:mt-16">
         <CTA url="/articles" text="All articles" client:load />
       </div>
     </div>
