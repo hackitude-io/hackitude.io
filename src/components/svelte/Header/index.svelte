@@ -119,6 +119,7 @@
   <div class="mx-auto flex items-center gap-8">
     <a
       href="/"
+      title="Home"
       class="h-12 grid place-items-center bg-brand-green w-fit py-2 px-6 rounded-full text-sm md:text-base font-semibold shadow hover:bg-brand-green/70 transition"
     >
       <Logo client:load />
