@@ -38,8 +38,8 @@ const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       if (node.data.target.sys.contentType.sys.id === 'codeBlock') {
-        return ` <pre class=${node.data.target.fields.language}}>
-                 <code>${node.data.target.fields.code}</code>
+        return ` <pre class=${node.data.target.fields.language}>
+                 <code class=${node.data.target.fields.language}>${node.data.target.fields.code}</code>
                </pre>`;
       }
     },
@@ -88,4 +88,14 @@ const htmlContent = documentToHtmlString(content, options);
       <article class="prose mt-4" set:html={htmlContent} />
     </div>
   </section>
+  <script>
+    import hljs from 'highlight.js';
+
+    //highlight.js
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el: any) => {
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
 </Layout>
