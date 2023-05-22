@@ -19,6 +19,7 @@ export async function getStaticPaths() {
       authorName: item.fields.author.fields.name,
       authorImage: item.fields.author.fields.profileImage,
       featuredImage: item.fields.featuredImage,
+      seoSchema: item.fields.seoSchema,
     },
   }));
 
@@ -32,6 +33,7 @@ const {
   authorName,
   authorImage,
   featuredImage,
+  seoSchema,
 } = Astro.props;
 
 const options = {
@@ -53,7 +55,7 @@ const wordCount = htmlContent.split(' ').length;
 const timeToRead = Math.ceil(wordCount / 200);
 ---
 
-<Layout title={`Hackitude | ${title}`}>
+<Layout title={`Hackitude | ${title}`} seoSchema={seoSchema}>
   <section class="bg-gradient-to-b from-white to-gray-50">
     <div class="max-w-5xl mx-auto py-8 px-8 md:px-0">
       <img
