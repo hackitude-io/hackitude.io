@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon';
+const { slug } = Astro.props;
+---
+
+<div class="flex items-center gap-x-2 my-4">
+  <span>Share</span>
+  <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=https://hackitude.io/articles/${slug}/`}
+    target="_blank"
+    title="Facebook Share"
+  >
+    <Icon
+      name="mdi:facebook"
+      aria-hidden="true"
+      class="w-12 md:w-6"
+    />
+  </a>
+  <a
+    href={`https://twitter.com/intent/tweet?url=https://hackitude.io/articles/${slug}/`}
+    target="_blank"
+    title="Twitter Share"
+  >
+    <Icon name="mdi:twitter" aria-hidden="true" class="w-12 md:w-6" />
+  </a>
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=https://hackitude.io/articles/${slug}`}
+    target="_blank"
+    title="LinkedIn Share"
+  >
+    <Icon
+      name="mdi:linkedin"
+      aria-hidden="true"
+      class="w-12 md:w-6"
+    />
+  </a>
+</div>
