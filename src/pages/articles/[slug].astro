@@ -47,6 +47,10 @@ const options = {
 };
 
 const htmlContent = documentToHtmlString(content, options);
+
+// Add time to read
+const wordCount = htmlContent.split(' ').length;
+const timeToRead = Math.ceil(wordCount / 200);
 ---
 
 <Layout title={`Hackitude | ${title}`}>
@@ -85,6 +89,7 @@ const htmlContent = documentToHtmlString(content, options);
           {authorName}
         </div>
       </div>
+      <div class="text-sm mt-1">Time to read: {timeToRead} min</div>
       <article class="prose mt-4" set:html={htmlContent} />
     </div>
   </section>
