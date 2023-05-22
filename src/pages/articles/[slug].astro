@@ -1,9 +1,9 @@
 ---
-import { contentfulClient } from '../../lib/contentful';
+import { contentfulClient } from '@lib/contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import Layout from '../../layouts/Layout.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Breadcrumbs from '@common/Breadcrumbs.astro';
 import { Icon } from 'astro-icon';
 import ShareButtons from '../../components/ShareButtons.astro';
 
