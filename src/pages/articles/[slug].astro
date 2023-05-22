@@ -4,6 +4,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { Icon } from 'astro-icon';
 
 export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries({
@@ -90,8 +91,18 @@ const timeToRead = Math.ceil(wordCount / 200);
           />
           {authorName}
         </div>
+        <div
+          class="text-sm mt-1 flex items-center gap-x-2 text-gray-500"
+        >
+          <Icon
+            name="fe:clock"
+            size={16}
+            class=""
+            aria-hidden="true"
+          />
+          {timeToRead} min
+        </div>
       </div>
-      <div class="text-sm mt-1">Time to read: {timeToRead} min</div>
       <article class="prose mt-4" set:html={htmlContent} />
     </div>
   </section>
