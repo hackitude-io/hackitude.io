@@ -67,6 +67,8 @@
 <header
   class="fixed bottom-0 py-8 grid place-items-center gap-8 w-full z-50"
 >
+  <a href="#maincontent" class="sr-only">Skip to main content</a>
+
   {#if isOpen}
     {#key key}
       <div
@@ -75,6 +77,7 @@
         <nav
           in:slide={{ duration, delay: duration }}
           out:slide={{ duration }}
+          id="main-menu"
           aria-label="Main Menu"
         >
           <ul class="flex gap-1 md:gap-6 group text-xs md:text-base">

@@ -12,6 +12,7 @@
   height="18px"
   version="1.1"
   viewBox="256 465.36 511.99 93.28"
+  aria-hidden="true"
   ><metadata id="metadata12"
     ><rdf:RDF
       ><cc:Work rdf:about=""

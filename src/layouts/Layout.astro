@@ -65,7 +65,9 @@ const { title, seoSchema } = Astro.props;
   </head>
   <body class="min-h-screen flex flex-col text-slate-800">
     <Header client:load />
-    <slot />
+    <div id="maincontent">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
