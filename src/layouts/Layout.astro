@@ -4,10 +4,11 @@ import Header from '@svelte/Header/index.svelte';
 
 export interface Props {
   title: string;
+  metaDescription: string;
   seoSchema: any;
 }
 
-const { title, seoSchema } = Astro.props;
+const { title, metaDescription, seoSchema } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -40,8 +41,10 @@ const { title, seoSchema } = Astro.props;
     <title>{title}</title>
     <meta
       name="description"
-      content="Hackitude.io - Master the art of web development, UX, and accessibility with practical articles, engaging tutorials, and a vibrant community."
+      content={metaDescription ||
+        'Hackitude.io - Master the art of web development, UX, and accessibility with practical articles, engaging tutorials, and a vibrant community.'}
     />
+
     <meta
       name="keywords"
       content="Hackitude, Web Development, UX, Accessibility, HTML, CSS, JavaScript, Front-end Development, Learning, Tutorials"
@@ -49,7 +52,8 @@ const { title, seoSchema } = Astro.props;
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
-      content="Hackitude.io - Master the art of web development, UX, and accessibility with practical articles, engaging tutorials, and a vibrant community."
+      content={metaDescription ||
+        'Hackitude.io - Master the art of web development, UX, and accessibility with practical articles, engaging tutorials, and a vibrant community.'}
     />
     <meta property="og:image" content="/assets/hackitude-og.webp" />
     <meta property="og:url" content="https://hackitude.io" />
