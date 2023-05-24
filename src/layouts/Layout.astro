@@ -7,9 +7,11 @@ export interface Props {
   metaDescription: string;
   seoSchema: any;
   ogImage: any;
+  ogUrl: string;
 }
 
-const { title, metaDescription, seoSchema, ogImage } = Astro.props;
+const { title, metaDescription, seoSchema, ogImage, ogUrl } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -60,7 +62,10 @@ const { title, metaDescription, seoSchema, ogImage } = Astro.props;
       property="og:image"
       content={ogImage || '/assets/hackitude-og.webp'}
     />
-    <meta property="og:url" content="https://hackitude.io" />
+    <meta
+      property="og:url"
+      content={ogUrl || 'https://hackitude.io/'}
+    />
     <meta name="twitter:card" content="summary_large_image" />
     {
       seoSchema && (
