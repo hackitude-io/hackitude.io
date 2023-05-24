@@ -4,6 +4,7 @@ import { contentfulClient } from '@lib/contentful';
 const entries = await contentfulClient.getEntries({
   content_type: 'article',
   limit: 3,
+  order: '-sys.createdAt',
 });
 
 const posts = entries.items.map((item) => {
