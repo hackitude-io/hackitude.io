@@ -6,9 +6,10 @@ export interface Props {
   title: string;
   metaDescription: string;
   seoSchema: any;
+  ogImage: any;
 }
 
-const { title, metaDescription, seoSchema } = Astro.props;
+const { title, metaDescription, seoSchema, ogImage } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -55,7 +56,10 @@ const { title, metaDescription, seoSchema } = Astro.props;
       content={metaDescription ||
         'Hackitude.io - Master the art of web development, UX, and accessibility with practical articles, engaging tutorials, and a vibrant community.'}
     />
-    <meta property="og:image" content="/assets/hackitude-og.webp" />
+    <meta
+      property="og:image"
+      content={ogImage || '/assets/hackitude-og.webp'}
+    />
     <meta property="og:url" content="https://hackitude.io" />
     <meta name="twitter:card" content="summary_large_image" />
     {
