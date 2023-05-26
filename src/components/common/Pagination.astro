@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
@@ -10,6 +11,7 @@ const { prevUrl, nextUrl } = Astro.props;
         class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
       >
         Previous
+        <Icon name="mdi:arrow-left-thin" class="object-contain w-6" />
       </a>
     ) : null
   }
@@ -20,6 +22,10 @@ const { prevUrl, nextUrl } = Astro.props;
         class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
       >
         Next
+        <Icon
+          name="mdi:arrow-right-thin"
+          class="object-contain w-6"
+        />
       </a>
     ) : null
   }
