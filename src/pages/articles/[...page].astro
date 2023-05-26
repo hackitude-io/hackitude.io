@@ -1,0 +1,72 @@
+---
+import Pagination from '@common/Pagination.astro';
+import Layout from '../../layouts/Layout.astro';
+import { contentfulClient } from '@lib/contentful';
+import ArticleCard from '@sections/ArticleCard.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const entries = await contentfulClient.getEntries({
+    content_type: 'article',
+    order: '-sys.createdAt',
+  });
+  const posts = entries.items.map((item) => {
+    const { title, date, featuredImage, summary, slug, author } =
+      item.fields;
+    return {
+      title,
+      slug,
+      summary,
+      date: new Date(date).toLocaleDateString(),
+      featuredImage,
+      authorName: author.fields.name,
+      authorImage: author.fields.profileImage,
+    };
+  });
+  return paginate(posts, {
+    pageSize: 6,
+  });
+}
+const { page } = Astro.props;
+---
+
+<Layout
+  title="Hackitude | Articles"
+  metaDescription="Delve into Hackitude's concise articles on development, UX design, and accessibility, often featuring practical tutorials."
+  ogUrl="https://hackitude.io/articles/"
+>
+  <main>
+    <section class="max-w-7xl mx-auto">
+      <div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+            Articles
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            As if writing code at work wasn't enough, we also write
+            about code when we can. Here are some articles about
+            development, ux design, accessibility and the industry.
+            They are short, to the point and often contain tutorials.
+          </p>
+        </div>
+        <div
+          class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+        >
+          {
+            page.data.map((post) => (
+              <ArticleCard
+                title={post.title}
+                slug={post.slug}
+                summary={post.summary}
+                date={post.date}
+                featuredImage={post.featuredImage}
+                authorName={post.authorName}
+                authorImage={post.authorImage}
+              />
+            ))
+          }
+        </div>
+        <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+      </div>
+    </section>
+  </main>
+</Layout>
