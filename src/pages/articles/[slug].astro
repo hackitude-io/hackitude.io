@@ -51,6 +51,12 @@ const options = {
                </pre>`;
       }
     },
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const { title, file } = node.data.target.fields;
+      const imageUrl = file.url;
+      const imageAlt = title;
+      return `<img src="${imageUrl}" alt="${imageAlt}" class="rounded-lg object-cover" loading="lazy"/>`;
+    },
   },
 };
 
